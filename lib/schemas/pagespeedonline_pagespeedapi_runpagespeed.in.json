@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "accessibility",
+                    "best-practices",
+                    "performance",
+                    "pwa",
+                    "seo"
+                ],
+                "type": "string"
+            }
+        },
+        "locale": {
+            "type": "string"
+        },
+        "strategy": {
+            "type": "string",
+            "enum": [
+                "desktop",
+                "mobile"
+            ]
+        },
+        "url": {
+            "required": true,
+            "type": "string"
+        },
+        "utm_campaign": {
+            "type": "string"
+        },
+        "utm_source": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

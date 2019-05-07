@@ -1,0 +1,51 @@
+{
+    "title": "PageSpeed Insights",
+    "description": "Analyzes the performance of a web page and provides tailored suggestions to make that page faster.",
+    "docsUrl": "https://developers.google.com/speed/docs/insights/v5/get-started",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/pagespeedonline/v5/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/pagespeedonline/v5",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "pagespeedonline_pagespeedapi_runpagespeed": {
+            "main": "./lib/actions/pagespeedonline_pagespeedapi_runpagespeed.js",
+            "title": "Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.",
+            "description": "Runs PageSpeed analysis on the page at the specified URL, and returns PageSpeed scores, a list of suggestions to make that page faster, and other information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/pagespeedonline_pagespeedapi_runpagespeed.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
